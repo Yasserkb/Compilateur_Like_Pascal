@@ -1,8 +1,8 @@
 package net.mips.compiler;
 
-import java.io.File;
 import java.io.FileNotFoundException;
 import java.io.FileReader;
+import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -24,22 +24,22 @@ public class Scanner {
         this.motsCles = new ArrayList<>();
     }
     public void initMotsCles(){
-        this.motsCles.add(new Symboles(Tokens.AFFEC_TOKEN,"="));
-        this.motsCles.add(new Symboles(Tokens.PLUS_TOKEN,"+"));
-        this.motsCles.add(new Symboles(Tokens.MOINS_TOKEN,"-"));
-        this.motsCles.add(new Symboles(Tokens.MUL_TOKEN,"*"));
-        this.motsCles.add(new Symboles(Tokens.DIV_TOKEN,"/"));
-        this.motsCles.add(new Symboles(Tokens.EG_TOKEN,"=="));
-        this.motsCles.add(new Symboles(Tokens.DIFF_TOKEN,"!="));
-        this.motsCles.add(new Symboles(Tokens.INF_TOKEN,"<"));
-        this.motsCles.add(new Symboles(Tokens.SUP_TOKEN,">"));
-        this.motsCles.add(new Symboles(Tokens.INFEG_TOKEN,"<="));
-        this.motsCles.add(new Symboles(Tokens.SUPEG_TOKEN,">="));
-        this.motsCles.add(new Symboles(Tokens.VIR_TOKEN,","));
-        this.motsCles.add(new Symboles(Tokens.PVIR_TOKEN,";"));
-        this.motsCles.add(new Symboles(Tokens.PNT_TOKEN,"."));
-        this.motsCles.add(new Symboles(Tokens.PARD_TOKEN,")"));
-        this.motsCles.add(new Symboles(Tokens.PARG_TOKEN,"("));
+//        this.motsCles.add(new Symboles(Tokens.AFFEC_TOKEN,"="));
+//        this.motsCles.add(new Symboles(Tokens.PLUS_TOKEN,"+"));
+//        this.motsCles.add(new Symboles(Tokens.MOINS_TOKEN,"-"));
+//        this.motsCles.add(new Symboles(Tokens.MUL_TOKEN,"*"));
+//        this.motsCles.add(new Symboles(Tokens.DIV_TOKEN,"/"));
+//        this.motsCles.add(new Symboles(Tokens.EG_TOKEN,"=="));
+//        this.motsCles.add(new Symboles(Tokens.DIFF_TOKEN,"!="));
+//        this.motsCles.add(new Symboles(Tokens.INF_TOKEN,"<"));
+//        this.motsCles.add(new Symboles(Tokens.SUP_TOKEN,">"));
+//        this.motsCles.add(new Symboles(Tokens.INFEG_TOKEN,"<="));
+//        this.motsCles.add(new Symboles(Tokens.SUPEG_TOKEN,">="));
+//        this.motsCles.add(new Symboles(Tokens.VIR_TOKEN,","));
+//        this.motsCles.add(new Symboles(Tokens.PVIR_TOKEN,";"));
+//        this.motsCles.add(new Symboles(Tokens.PNT_TOKEN,"."));
+//        this.motsCles.add(new Symboles(Tokens.PARD_TOKEN,")"));
+//        this.motsCles.add(new Symboles(Tokens.PARG_TOKEN,"("));
         this.motsCles.add(new Symboles(Tokens.BEGIN_TOKEN,"begin"));
         this.motsCles.add(new Symboles(Tokens.END_TOKEN,"end"));
         this.motsCles.add(new Symboles(Tokens.IF_TOKEN,"if"));
@@ -56,9 +56,52 @@ public class Scanner {
 
     public Tokens codeLex(String mot){
 
-        return null;
+
+        for (Symboles sym : symbCour) {
+
+        }
+
+//        switch (mot) {
+//
+//            case "+": return Tokens.PLUS_TOKEN;
+//            case "-": return Tokens.MOINS_TOKEN;
+//            case "*": return Tokens.MUL_TOKEN;
+//            case "/": return Tokens.DIV_TOKEN;
+//            case "==": return Tokens.EG_TOKEN;
+//            case "!=": return Tokens.DIFF_TOKEN;
+//            case "<": return Tokens.INF_TOKEN;
+//            case ">": return Tokens.SUP_TOKEN;
+//            case "<=": return Tokens.INFEG_TOKEN;
+//            case ">=": return Tokens.SUPEG_TOKEN;
+//            case ",": return Tokens.VIR_TOKEN;
+//            case ";": return Tokens.PVIR_TOKEN;
+//            case ".": return Tokens.PNT_TOKEN;
+//            case ")": return Tokens.PARD_TOKEN;
+//            case "(": return Tokens.PARG_TOKEN;
+//            default:  return Tokens.ID_TOKEN;
+//        }
+
+       return null;
     }
 
+    public void lireCar() throws IOException{
+        this.carCour = (char)this.fluxSour.read();
+    }
+
+    public void lireNombre(){
+
+    }
+
+
+//    void isDigit(){};
+//    void isEqualEgnore(){};
+    public void lireMot() throws IOException{
+
+    }
+
+    public void symbSuiv(){
+
+    }
     public List<Symboles> getMotsCles() {
         return motsCles;
     }
